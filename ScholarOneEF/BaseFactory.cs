@@ -116,7 +116,7 @@ namespace ScholarOneEF
 
         #region Constructor
 
-        internal BaseFactory(string user, string password, string siteName)
+        protected BaseFactory(string user, string password, string siteName)
         {
             _user = user;
             _password = password;
