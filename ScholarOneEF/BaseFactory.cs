@@ -141,6 +141,66 @@ namespace ScholarOneEF
             return service;
         }
 
+        /// <summary>
+        /// Use getAuthorFullByDocumentId service
+        /// </summary>
+        /// <param name="ids">document ids</param>
+        /// <returns>service object</returns>
+        public async Task<AuthorFullByDocumentIdService> getAuthorFullByDocumentId(IEnumerable<string> ids)
+        {
+            var service = new AuthorFullByDocumentIdService(ids);
+            await ConsumeApi(service);
+            return service;
+        }
+
+        /// <summary>
+        /// Use getAuthorBasicBySubmissionId service
+        /// </summary>
+        /// <param name="ids">submission ids</param>
+        /// <returns>service object</returns>
+        public async Task<AuthorBasicBySubmissionIdService> getAuthorBasicBySubmissionId(IEnumerable<string> ids)
+        {
+            var service = new AuthorBasicBySubmissionIdService(ids);
+            await ConsumeApi(service);
+            return service;
+        }
+
+        /// <summary>
+        /// Use getAuthorBasicByDocumentId service
+        /// </summary>
+        /// <param name="ids">document ids</param>
+        /// <returns>service object</returns>
+        public async Task<AuthorBasicByDocumentIdService> getAuthorBasicByDocumentId(IEnumerable<string> ids)
+        {
+            var service = new AuthorBasicByDocumentIdService(ids);
+            await ConsumeApi(service);
+            return service;
+        }
+
+        /// <summary>
+        /// Use getReviewerInfoFullBySubmissionId service
+        /// </summary>
+        /// <param name="ids">submission ids</param>
+        /// <returns>service object</returns>
+        public async Task<ReviewerInfoFullBySubmissionIdService> getReviewerInfoFullBySubmissionId(IEnumerable<string> ids)
+        {
+            var service = new ReviewerInfoFullBySubmissionIdService(ids);
+            await ConsumeApi(service);
+            return service;
+        }
+
+        /// <summary>
+        /// Use getReviewerInfoFullByDocumentId service
+        /// </summary>
+        /// <param name="ids">document ids</param>
+        /// <returns>service object</returns>
+        public async Task<ReviewerInfoFullByDocumentIdService> getReviewerInfoFullByDocumentId(IEnumerable<string> ids)
+        {
+            var service = new ReviewerInfoFullByDocumentIdService(ids);
+            await ConsumeApi(service);
+            return service;
+        }
+
         #endregion
 
         #region Abstract Methods
