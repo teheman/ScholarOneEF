@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace ScholarOneEF
@@ -23,7 +24,9 @@ namespace ScholarOneEF
                 request.Headers.Add("Authorization", authorizationHeader);
 
                 var result = await _client.SendAsync(request);
-                return await result.Content.ReadAsStringAsync();
+
+                var bytes = await result.Content.ReadAsByteArrayAsync();
+                return Encoding.UTF8.GetString(bytes, 0, bytes.Length);
             }
             else
             {
@@ -31,6 +34,7 @@ namespace ScholarOneEF
                 using (var client = new WebClient())
                 {
                     client.Headers.Add("Authorization", authorizationHeader);
+                    client.Encoding = Encoding.UTF8;
                     response = await Task.Run(() => client.DownloadString(uri));
                 }
 
