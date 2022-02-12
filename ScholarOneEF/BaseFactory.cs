@@ -201,6 +201,54 @@ namespace ScholarOneEF
             return service;
         }
 
+        /// <summary>
+        /// Use getSubmissionInfoBasicBySubmissionId service
+        /// </summary>
+        /// <param name="ids">submission ids</param>
+        /// <returns>service object</returns>
+        public async Task<SubmissionInfoBasicBySubmissionIdService> getSubmissionInfoBasicBySubmissionId(IEnumerable<string> ids)
+        {
+            var service = new SubmissionInfoBasicBySubmissionIdService(ids);
+            await ConsumeApi(service);
+            return service;
+        }
+
+        /// <summary>
+        /// Use getSubmissionInfoBasicByDocumentId service
+        /// </summary>
+        /// <param name="ids">document ids</param>
+        /// <returns>service object</returns>
+        public async Task<SubmissionInfoBasicByDocumentIdService> getSubmissionInfoBasicByDocumentId(IEnumerable<string> ids)
+        {
+            var service = new SubmissionInfoBasicByDocumentIdService(ids);
+            await ConsumeApi(service);
+            return service;
+        }
+
+        /// <summary>
+        /// Use getSubmissionFullBySubmissionId service
+        /// </summary>
+        /// <param name="ids">submission ids</param>
+        /// <returns>service object</returns>
+        public async Task<SubmissionFullBySubmissionIdService> getSubmissionFullBySubmissionId(IEnumerable<string> ids)
+        {
+            var service = new SubmissionFullBySubmissionIdService(ids);
+            await ConsumeApi(service);
+            return service;
+        }
+
+        /// <summary>
+        /// Use getSubmissionFullByDocumentId service
+        /// </summary>
+        /// <param name="ids">document ids</param>
+        /// <returns>service object</returns>
+        public async Task<SubmissionFullByDocumentIdService> getSubmissionFullByDocumentId(IEnumerable<string> ids)
+        {
+            var service = new SubmissionFullByDocumentIdService(ids);
+            await ConsumeApi(service);
+            return service;
+        }
+
         #endregion
 
         #region Abstract Methods

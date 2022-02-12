@@ -44,6 +44,10 @@
     <Compile Include="BaseFactory.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="Factory.cs" />
+    <Compile Include="Services\SubmissionFullBySubmissionIdService.cs" />
+    <Compile Include="Services\SubmissionFullByDocumentIdService.cs" />
+    <Compile Include="Services\SubmissionInfoBasicBySubmissionIdService.cs" />
+    <Compile Include="Services\SubmissionInfoBasicByDocumentIdService.cs" />
     <Compile Include="Services\AuthorBasicByDocumentIdService.cs" />
     <Compile Include="Services\ReviewerInfoFullBySubmissionIdService.cs" />
     <Compile Include="Services\ReviewerInfoFullByDocumentIdService.cs" />
