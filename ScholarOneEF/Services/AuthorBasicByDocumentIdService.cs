@@ -2,15 +2,8 @@
 
 namespace ScholarOneEF.Services
 {
-    public class AuthorBasicByDocumentIdService : BaseService
+    public class AuthorBasicByDocumentIdService : BaseIdsService
     {
-        private string _queryString;
-
-        internal override string GetQueryParameters() => _queryString;
-
-        internal AuthorBasicByDocumentIdService(IEnumerable<string> ids) : base(ServiceEndpoints.AuthorBasicByDocumentId)
-        {
-            _queryString = FormatIds(ids);
-        }
+        internal AuthorBasicByDocumentIdService(IEnumerable<string> ids) : base(ids, ServiceEndpoints.AuthorBasicByDocumentId) { }
     }
 }

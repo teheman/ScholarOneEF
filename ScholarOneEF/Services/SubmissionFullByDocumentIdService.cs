@@ -2,15 +2,8 @@
 
 namespace ScholarOneEF.Services
 {
-    public class SubmissionFullByDocumentIdService : BaseService
+    public class SubmissionFullByDocumentIdService : BaseIdsService
     {
-        private string _queryString;
-
-        internal override string GetQueryParameters() => _queryString;
-
-        internal SubmissionFullByDocumentIdService(IEnumerable<string> ids) : base(ServiceEndpoints.SubmissionFullDocumentId)
-        {
-            _queryString = FormatIds(ids);
-        }
+        internal SubmissionFullByDocumentIdService(IEnumerable<string> ids) : base(ids, ServiceEndpoints.SubmissionFullDocumentId) { }
     }
 }

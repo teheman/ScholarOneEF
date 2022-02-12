@@ -2,15 +2,8 @@
 
 namespace ScholarOneEF.Services
 {
-    public class ReviewerInfoFullByDocumentIdService : BaseService
+    public class ReviewerInfoFullByDocumentIdService : BaseIdsService
     {
-        private string _queryString;
-
-        internal override string GetQueryParameters() => _queryString;
-
-        internal ReviewerInfoFullByDocumentIdService(IEnumerable<string> ids) : base(ServiceEndpoints.ReviewerInfoFullByDocumentId)
-        {
-            _queryString = FormatIds(ids);
-        }
+        internal ReviewerInfoFullByDocumentIdService(IEnumerable<string> ids) : base(ids, ServiceEndpoints.ReviewerInfoFullByDocumentId) { }
     }
 }

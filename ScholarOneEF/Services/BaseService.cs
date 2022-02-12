@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace ScholarOneEF.Services
 {
@@ -98,20 +96,6 @@ namespace ScholarOneEF.Services
         internal BaseService(string endpoint)
         {
             _endpoint = endpoint;
-        }
-
-        #endregion
-
-        #region Helper Methods
-
-        /// <summary>
-        /// Format "ids" query parameter
-        /// </summary>
-        /// <param name="ids">collection of ids</param>
-        /// <returns>query parameter as string, including "&amp;ids="</returns>
-        protected static string FormatIds(IEnumerable<string> ids)
-        {
-            return (ids == null || !ids.Any()) ? "" : ("&ids=" + string.Join(",", ids.Select(t => "'" + t + "'")));
         }
 
         #endregion
