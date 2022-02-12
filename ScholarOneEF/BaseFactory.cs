@@ -249,6 +249,54 @@ namespace ScholarOneEF
             return service;
         }
 
+        /// <summary>
+        /// Use getStaffInfoFullBySubmissionId service
+        /// </summary>
+        /// <param name="ids">submission ids</param>
+        /// <returns>service object</returns>
+        public async Task<StaffInfoFullBySubmissionIdService> getStaffInfoFullBySubmissionId(IEnumerable<string> ids)
+        {
+            var service = new StaffInfoFullBySubmissionIdService(ids);
+            await ConsumeApi(service);
+            return service;
+        }
+
+        /// <summary>
+        /// Use getStaffInfoFullByDocumentId service
+        /// </summary>
+        /// <param name="ids">document ids</param>
+        /// <returns>service object</returns>
+        public async Task<StaffInfoFullByDocumentIdService> getStaffInfoFullByDocumentId(IEnumerable<string> ids)
+        {
+            var service = new StaffInfoFullByDocumentIdService(ids);
+            await ConsumeApi(service);
+            return service;
+        }
+
+        /// <summary>
+        /// Use getSubmissionVersionsBySubmissionId service
+        /// </summary>
+        /// <param name="ids">submission ids</param>
+        /// <returns>service object</returns>
+        public async Task<SubmissionVersionsBySubmissionIdService> getSubmissionVersionsBySubmissionId(IEnumerable<string> ids)
+        {
+            var service = new SubmissionVersionsBySubmissionIdService(ids);
+            await ConsumeApi(service);
+            return service;
+        }
+
+        /// <summary>
+        /// Use getSubmissionVersionsByDocumentId service
+        /// </summary>
+        /// <param name="ids">document ids</param>
+        /// <returns>service object</returns>
+        public async Task<SubmissionVersionsByDocumentIdService> getSubmissionVersionsByDocumentId(IEnumerable<string> ids)
+        {
+            var service = new SubmissionVersionsByDocumentIdService(ids);
+            await ConsumeApi(service);
+            return service;
+        }
+
         #endregion
 
         #region Abstract Methods
