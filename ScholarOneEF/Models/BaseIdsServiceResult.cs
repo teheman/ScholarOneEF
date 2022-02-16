@@ -1,18 +1,18 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace ScholarOneEF.Services
+namespace ScholarOneEF.Models
 {
     /// <summary>
-    /// A service that takes document or submission ids as its parameter
+    /// Service that takes document or submission ids as its parameter
     /// </summary>
-    public abstract class BaseIdsService : BaseService
+    public abstract class BaseIdsServiceResult : BaseServiceResult
     {
         private string _queryString;
 
         internal override string GetQueryParameters() => _queryString;
 
-        internal BaseIdsService(IEnumerable<string> ids, string endPoint) : base(endPoint)
+        internal BaseIdsServiceResult(IEnumerable<string> ids, string endPoint) : base(endPoint)
         {
             _queryString = FormatIds(ids);
         }

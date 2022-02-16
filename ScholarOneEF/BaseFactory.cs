@@ -1,4 +1,4 @@
-﻿using ScholarOneEF.Services;
+﻿using ScholarOneEF.Models;
 using System;
 using System.Collections.Generic;
 using System.Net;
@@ -97,7 +97,7 @@ namespace ScholarOneEF
 
         /// <summary>
         /// Indicates if errors should be caught or allowed to propogate<br />
-        /// If false, any errors consuming the service will be caught and assigned to the service's Error property<br />
+        /// If false, any errors consuming the service will be caught and assigned to the service result's Error property<br />
         /// Default value is true
         /// </summary>
         public bool PropogateErrors
@@ -134,9 +134,9 @@ namespace ScholarOneEF
         /// </summary>
         /// <param name="ids">submission ids</param>
         /// <returns>service object</returns>
-        public async Task<AuthorFullBySubmissionIdService> getAuthorFullBySubmissionId(IEnumerable<string> ids)
+        public async Task<AuthorFullBySubmissionIdResult> getAuthorFullBySubmissionId(IEnumerable<string> ids)
         {
-            var service = new AuthorFullBySubmissionIdService(ids);
+            var service = new AuthorFullBySubmissionIdResult(ids);
             await ConsumeApi(service);
             return service;
         }
@@ -146,9 +146,9 @@ namespace ScholarOneEF
         /// </summary>
         /// <param name="ids">document ids</param>
         /// <returns>service object</returns>
-        public async Task<AuthorFullByDocumentIdService> getAuthorFullByDocumentId(IEnumerable<string> ids)
+        public async Task<AuthorFullByDocumentIdResult> getAuthorFullByDocumentId(IEnumerable<string> ids)
         {
-            var service = new AuthorFullByDocumentIdService(ids);
+            var service = new AuthorFullByDocumentIdResult(ids);
             await ConsumeApi(service);
             return service;
         }
@@ -158,9 +158,9 @@ namespace ScholarOneEF
         /// </summary>
         /// <param name="ids">submission ids</param>
         /// <returns>service object</returns>
-        public async Task<AuthorBasicBySubmissionIdService> getAuthorBasicBySubmissionId(IEnumerable<string> ids)
+        public async Task<AuthorBasicBySubmissionIdResult> getAuthorBasicBySubmissionId(IEnumerable<string> ids)
         {
-            var service = new AuthorBasicBySubmissionIdService(ids);
+            var service = new AuthorBasicBySubmissionIdResult(ids);
             await ConsumeApi(service);
             return service;
         }
@@ -170,9 +170,9 @@ namespace ScholarOneEF
         /// </summary>
         /// <param name="ids">document ids</param>
         /// <returns>service object</returns>
-        public async Task<AuthorBasicByDocumentIdService> getAuthorBasicByDocumentId(IEnumerable<string> ids)
+        public async Task<AuthorBasicByDocumentIdResult> getAuthorBasicByDocumentId(IEnumerable<string> ids)
         {
-            var service = new AuthorBasicByDocumentIdService(ids);
+            var service = new AuthorBasicByDocumentIdResult(ids);
             await ConsumeApi(service);
             return service;
         }
@@ -182,9 +182,9 @@ namespace ScholarOneEF
         /// </summary>
         /// <param name="ids">submission ids</param>
         /// <returns>service object</returns>
-        public async Task<ReviewerInfoFullBySubmissionIdService> getReviewerInfoFullBySubmissionId(IEnumerable<string> ids)
+        public async Task<ReviewerInfoFullBySubmissionIdResult> getReviewerInfoFullBySubmissionId(IEnumerable<string> ids)
         {
-            var service = new ReviewerInfoFullBySubmissionIdService(ids);
+            var service = new ReviewerInfoFullBySubmissionIdResult(ids);
             await ConsumeApi(service);
             return service;
         }
@@ -194,9 +194,9 @@ namespace ScholarOneEF
         /// </summary>
         /// <param name="ids">document ids</param>
         /// <returns>service object</returns>
-        public async Task<ReviewerInfoFullByDocumentIdService> getReviewerInfoFullByDocumentId(IEnumerable<string> ids)
+        public async Task<ReviewerInfoFullByDocumentIdResult> getReviewerInfoFullByDocumentId(IEnumerable<string> ids)
         {
-            var service = new ReviewerInfoFullByDocumentIdService(ids);
+            var service = new ReviewerInfoFullByDocumentIdResult(ids);
             await ConsumeApi(service);
             return service;
         }
@@ -206,9 +206,9 @@ namespace ScholarOneEF
         /// </summary>
         /// <param name="ids">submission ids</param>
         /// <returns>service object</returns>
-        public async Task<SubmissionInfoBasicBySubmissionIdService> getSubmissionInfoBasicBySubmissionId(IEnumerable<string> ids)
+        public async Task<SubmissionInfoBasicBySubmissionIdResult> getSubmissionInfoBasicBySubmissionId(IEnumerable<string> ids)
         {
-            var service = new SubmissionInfoBasicBySubmissionIdService(ids);
+            var service = new SubmissionInfoBasicBySubmissionIdResult(ids);
             await ConsumeApi(service);
             return service;
         }
@@ -218,9 +218,9 @@ namespace ScholarOneEF
         /// </summary>
         /// <param name="ids">document ids</param>
         /// <returns>service object</returns>
-        public async Task<SubmissionInfoBasicByDocumentIdService> getSubmissionInfoBasicByDocumentId(IEnumerable<string> ids)
+        public async Task<SubmissionInfoBasicByDocumentIdResult> getSubmissionInfoBasicByDocumentId(IEnumerable<string> ids)
         {
-            var service = new SubmissionInfoBasicByDocumentIdService(ids);
+            var service = new SubmissionInfoBasicByDocumentIdResult(ids);
             await ConsumeApi(service);
             return service;
         }
@@ -230,9 +230,9 @@ namespace ScholarOneEF
         /// </summary>
         /// <param name="ids">submission ids</param>
         /// <returns>service object</returns>
-        public async Task<SubmissionFullBySubmissionIdService> getSubmissionFullBySubmissionId(IEnumerable<string> ids)
+        public async Task<SubmissionFullBySubmissionIdResult> getSubmissionFullBySubmissionId(IEnumerable<string> ids)
         {
-            var service = new SubmissionFullBySubmissionIdService(ids);
+            var service = new SubmissionFullBySubmissionIdResult(ids);
             await ConsumeApi(service);
             return service;
         }
@@ -242,9 +242,9 @@ namespace ScholarOneEF
         /// </summary>
         /// <param name="ids">document ids</param>
         /// <returns>service object</returns>
-        public async Task<SubmissionFullByDocumentIdService> getSubmissionFullByDocumentId(IEnumerable<string> ids)
+        public async Task<SubmissionFullByDocumentIdResult> getSubmissionFullByDocumentId(IEnumerable<string> ids)
         {
-            var service = new SubmissionFullByDocumentIdService(ids);
+            var service = new SubmissionFullByDocumentIdResult(ids);
             await ConsumeApi(service);
             return service;
         }
@@ -254,9 +254,9 @@ namespace ScholarOneEF
         /// </summary>
         /// <param name="ids">submission ids</param>
         /// <returns>service object</returns>
-        public async Task<StaffInfoFullBySubmissionIdService> getStaffInfoFullBySubmissionId(IEnumerable<string> ids)
+        public async Task<StaffInfoFullBySubmissionIdResult> getStaffInfoFullBySubmissionId(IEnumerable<string> ids)
         {
-            var service = new StaffInfoFullBySubmissionIdService(ids);
+            var service = new StaffInfoFullBySubmissionIdResult(ids);
             await ConsumeApi(service);
             return service;
         }
@@ -266,9 +266,9 @@ namespace ScholarOneEF
         /// </summary>
         /// <param name="ids">document ids</param>
         /// <returns>service object</returns>
-        public async Task<StaffInfoFullByDocumentIdService> getStaffInfoFullByDocumentId(IEnumerable<string> ids)
+        public async Task<StaffInfoFullByDocumentIdResult> getStaffInfoFullByDocumentId(IEnumerable<string> ids)
         {
-            var service = new StaffInfoFullByDocumentIdService(ids);
+            var service = new StaffInfoFullByDocumentIdResult(ids);
             await ConsumeApi(service);
             return service;
         }
@@ -278,9 +278,9 @@ namespace ScholarOneEF
         /// </summary>
         /// <param name="ids">submission ids</param>
         /// <returns>service object</returns>
-        public async Task<SubmissionVersionsBySubmissionIdService> getSubmissionVersionsBySubmissionId(IEnumerable<string> ids)
+        public async Task<SubmissionVersionsBySubmissionIdResult> getSubmissionVersionsBySubmissionId(IEnumerable<string> ids)
         {
-            var service = new SubmissionVersionsBySubmissionIdService(ids);
+            var service = new SubmissionVersionsBySubmissionIdResult(ids);
             await ConsumeApi(service);
             return service;
         }
@@ -290,9 +290,9 @@ namespace ScholarOneEF
         /// </summary>
         /// <param name="ids">document ids</param>
         /// <returns>service object</returns>
-        public async Task<SubmissionVersionsByDocumentIdService> getSubmissionVersionsByDocumentId(IEnumerable<string> ids)
+        public async Task<SubmissionVersionsByDocumentIdResult> getSubmissionVersionsByDocumentId(IEnumerable<string> ids)
         {
-            var service = new SubmissionVersionsByDocumentIdService(ids);
+            var service = new SubmissionVersionsByDocumentIdResult(ids);
             await ConsumeApi(service);
             return service;
         }
@@ -308,7 +308,7 @@ namespace ScholarOneEF
         /// <returns>authorization header of the response as a string</returns>
         protected abstract Task<string> GetInitialAuthorizationHeader(Uri uri);
         /// <summary>
-        /// Performs authorized request of digest API and returns the content
+        /// Performs second request of digest API method with full authorization header and returns the response content
         /// </summary>
         /// <param name="uri">Uri of a digest API</param>
         /// <param name="authorizationHeader">Authorization header to be used by the request</param>
@@ -323,7 +323,7 @@ namespace ScholarOneEF
         /// Consume the service and update the service object
         /// </summary>
         /// <param name="service">ScholarOne service</param>
-        protected async Task ConsumeApi(BaseService service)
+        protected async Task ConsumeApi(BaseServiceResult service)
         {
             service.Begin();
             service.Response = null;

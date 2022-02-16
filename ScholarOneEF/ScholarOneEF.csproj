@@ -44,24 +44,11 @@
     <Compile Include="BaseFactory.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="Factory.cs" />
-    <Compile Include="Services\StaffInfoFullBySubmissionIdService.cs" />
-    <Compile Include="Services\StaffInfoFullByDocumentIdService.cs" />
-    <Compile Include="Services\BaseIdsService.cs" />
-    <Compile Include="Services\SubmissionFullBySubmissionIdService.cs" />
-    <Compile Include="Services\SubmissionFullByDocumentIdService.cs" />
-    <Compile Include="Services\SubmissionVersionsBySubmissionIdService.cs" />
-    <Compile Include="Services\SubmissionVersionsByDocumentIdService.cs" />
-    <Compile Include="Services\SubmissionInfoBasicBySubmissionIdService.cs" />
-    <Compile Include="Services\SubmissionInfoBasicByDocumentIdService.cs" />
-    <Compile Include="Services\AuthorBasicByDocumentIdService.cs" />
-    <Compile Include="Services\ReviewerInfoFullBySubmissionIdService.cs" />
-    <Compile Include="Services\ReviewerInfoFullByDocumentIdService.cs" />
-    <Compile Include="Services\AuthorFullByDocumentIdService.cs" />
-    <Compile Include="Services\AuthorBasicBySubmissionIdService.cs" />
-    <Compile Include="Services\AuthorFullBySubmissionIdService.cs" />
-    <Compile Include="Services\BaseService.cs" />
+    <Compile Include="Models\ServiceResults.cs" />
+    <Compile Include="Models\BaseIdsServiceResult.cs" />
+    <Compile Include="Models\BaseServiceResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\ServiceEndpoints.cs" />
+    <Compile Include="Models\ServiceEndpoints.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

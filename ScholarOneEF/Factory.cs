@@ -75,7 +75,7 @@ namespace ScholarOneEF
         #region Constructors
 
         /// <summary>
-        /// Initialize factory that will use HttpWebRequests to consume ScholarOne Api
+        /// Initialize factory that will use HttpClient to consume ScholarOne Api
         /// </summary>
         /// <param name="user">API user name</param>
         /// <param name="password">API key</param>
@@ -87,7 +87,7 @@ namespace ScholarOneEF
         }
 
         /// <summary>
-        /// Initialize factory that will use HttpWebRequests to consume ScholarOne Api
+        /// Initialize factory that will use HttpClient to consume ScholarOne Api
         /// </summary>
         /// <param name="user">API user name</param>
         /// <param name="password">API key</param>
@@ -101,7 +101,7 @@ namespace ScholarOneEF
         }
 
         /// <summary>
-        /// Initialize factory that will use HttpWebRequests to consume ScholarOne Api
+        /// Initialize factory that will use HttpClient to consume ScholarOne Api
         /// </summary>
         /// <param name="user">API user name</param>
         /// <param name="password">API key</param>

@@ -1,16 +1,16 @@
 ﻿using System;
 
-namespace ScholarOneEF.Services
+namespace ScholarOneEF.Models
 {
     /// <summary>
     /// Base class for ScholarOne API service
     /// </summary>
-    public abstract class BaseService
+    public abstract class BaseServiceResult
     {
         #region public properties
 
         /// <summary>
-        /// The raw XML or JSON returned by the service
+        /// The raw XML or JSON string returned by the service response body
         /// </summary>
         public string Response { get; internal set; }
         /// <summary>
@@ -40,7 +40,8 @@ namespace ScholarOneEF.Services
         /// </summary>
         public bool Success { get; internal set; }
         /// <summary>
-        /// If an error occurs while consuming the service, the exception will be set in this property
+        /// If an error occurs while consuming the service, the exception will be set in this property<br />
+        /// This property will only be set if PropogateErrors is false in the service factory
         /// </summary>
         public Exception Error { get; internal set; }
 
@@ -93,7 +94,7 @@ namespace ScholarOneEF.Services
         /// Constructor for base api service
         /// </summary>
         /// <param name="endpoint">service enpoint found in ServiceEndpoints constants</param>
-        internal BaseService(string endpoint)
+        internal BaseServiceResult(string endpoint)
         {
             _endpoint = endpoint;
         }
