@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace ScholarOneEF.Models
 {
@@ -99,5 +100,21 @@ namespace ScholarOneEF.Models
     public class SubmissionVersionsBySubmissionIdResult : BaseIdsServiceResult
     {
         internal SubmissionVersionsBySubmissionIdResult(IEnumerable<string> ids) : base(ids, ServiceEndpoints.SubmissionVersionsSubmissionId) { }
+    }
+    /// <summary>
+    /// Results of consuming ScholarOne API service ExternalDocumentIds
+    /// </summary>
+    public class ExternalDocumentIdsResult : BaseServiceResult
+    {
+        private string _queryString;
+
+        internal override string GetQueryParameters() => _queryString;
+
+        internal ExternalDocumentIdsResult(DateTime from, DateTime to, string key) : base(ServiceEndpoints.ExternalDocumentIdsFull)
+        {
+            _queryString = (string.IsNullOrWhiteSpace(key) ? "" : $"&integration_key={key}")
+                + $"&from_time={from:s}"
+                + $"&to_time={to:s}";
+        }
     }
 }

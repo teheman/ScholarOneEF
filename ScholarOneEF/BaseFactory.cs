@@ -297,6 +297,20 @@ namespace ScholarOneEF
             return service;
         }
 
+        /// <summary>
+        /// Use getExternalDocumentIdsFull service
+        /// </summary>
+        /// <param name="from">Beginning date of the time period being requested</param>
+        /// <param name="to">Ending date of the time period being requested</param>
+        /// <param name="integrationKey">The submission integration key uniquely identifying integration. This is the value contained in the &lt;clientkey&gt; element in the header of the .go file</param> 
+        /// <returns>service object</returns>
+        public async Task<ExternalDocumentIdsResult> getExternalDocumentIdsFull(DateTime from, DateTime to, string integrationKey)
+        {
+            var service = new ExternalDocumentIdsResult(from, to, integrationKey);
+            await ConsumeApi(service);
+            return service;
+        }
+
         #endregion
 
         #region Abstract Methods
