@@ -49,7 +49,7 @@ namespace ScholarOneEF.Models
 
         #region Fields
 
-        private string _endpoint;
+        private readonly string _endpoint;
         private DateTime? _start;
         private DateTime? _stop;
 

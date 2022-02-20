@@ -5,7 +5,7 @@
     /// </summary>
     public abstract class BaseEmailServiceResult : BaseServiceResult
     {
-        private string _queryString;
+        private readonly string _queryString;
 
         internal override string GetQueryParameters() => _queryString;
 

@@ -13,11 +13,11 @@ namespace ScholarOneEF
     {
         #region Fields
 
-        private string _user;
-        private string _password;
+        private readonly string _user;
+        private readonly string _password;
         private EnvironmentEnum _environment;
 
-        private string _siteName;
+        private readonly string _siteName;
         private string _externalId = null;
         private ResponseTypeEnum _type = ResponseTypeEnum.xml;
         private LocaleIdEnum _localeId = LocaleIdEnum.English;
@@ -130,11 +130,11 @@ namespace ScholarOneEF
         #region Services
 
         /// <summary>
-        /// Use getAuthorFullBySubmissionId service
+        /// Request manuscript author information by Submission ID
         /// </summary>
         /// <param name="ids">submission ids</param>
         /// <returns>service object</returns>
-        public async Task<AuthorFullBySubmissionIdResult> getAuthorFullBySubmissionId(IEnumerable<string> ids)
+        public async Task<AuthorFullBySubmissionIdResult> GetAuthorFullBySubmissionId(IEnumerable<string> ids)
         {
             var service = new AuthorFullBySubmissionIdResult(ids);
             await ConsumeApi(service);
@@ -142,11 +142,11 @@ namespace ScholarOneEF
         }
 
         /// <summary>
-        /// Use getAuthorFullByDocumentId service
+        /// Request manuscript author information by Document ID
         /// </summary>
         /// <param name="ids">document ids</param>
         /// <returns>service object</returns>
-        public async Task<AuthorFullByDocumentIdResult> getAuthorFullByDocumentId(IEnumerable<string> ids)
+        public async Task<AuthorFullByDocumentIdResult> GetAuthorFullByDocumentId(IEnumerable<string> ids)
         {
             var service = new AuthorFullByDocumentIdResult(ids);
             await ConsumeApi(service);
@@ -154,11 +154,11 @@ namespace ScholarOneEF
         }
 
         /// <summary>
-        /// Use getAuthorBasicBySubmissionId service
+        /// Request manuscript author metadata by Submission ID
         /// </summary>
         /// <param name="ids">submission ids</param>
         /// <returns>service object</returns>
-        public async Task<AuthorBasicBySubmissionIdResult> getAuthorBasicBySubmissionId(IEnumerable<string> ids)
+        public async Task<AuthorBasicBySubmissionIdResult> GetAuthorBasicBySubmissionId(IEnumerable<string> ids)
         {
             var service = new AuthorBasicBySubmissionIdResult(ids);
             await ConsumeApi(service);
@@ -166,11 +166,11 @@ namespace ScholarOneEF
         }
 
         /// <summary>
-        /// Use getAuthorBasicByDocumentId service
+        /// Request manuscript author metadata by Document ID
         /// </summary>
         /// <param name="ids">document ids</param>
         /// <returns>service object</returns>
-        public async Task<AuthorBasicByDocumentIdResult> getAuthorBasicByDocumentId(IEnumerable<string> ids)
+        public async Task<AuthorBasicByDocumentIdResult> GetAuthorBasicByDocumentId(IEnumerable<string> ids)
         {
             var service = new AuthorBasicByDocumentIdResult(ids);
             await ConsumeApi(service);
@@ -178,11 +178,11 @@ namespace ScholarOneEF
         }
 
         /// <summary>
-        /// Use getReviewerInfoFullBySubmissionId service
+        /// Request manuscript reviewer information by Submission ID
         /// </summary>
         /// <param name="ids">submission ids</param>
         /// <returns>service object</returns>
-        public async Task<ReviewerInfoFullBySubmissionIdResult> getReviewerInfoFullBySubmissionId(IEnumerable<string> ids)
+        public async Task<ReviewerInfoFullBySubmissionIdResult> GetReviewerInfoFullBySubmissionId(IEnumerable<string> ids)
         {
             var service = new ReviewerInfoFullBySubmissionIdResult(ids);
             await ConsumeApi(service);
@@ -190,11 +190,11 @@ namespace ScholarOneEF
         }
 
         /// <summary>
-        /// Use getReviewerInfoFullByDocumentId service
+        /// Request manuscript reviewer information by Document ID
         /// </summary>
         /// <param name="ids">document ids</param>
         /// <returns>service object</returns>
-        public async Task<ReviewerInfoFullByDocumentIdResult> getReviewerInfoFullByDocumentId(IEnumerable<string> ids)
+        public async Task<ReviewerInfoFullByDocumentIdResult> GetReviewerInfoFullByDocumentId(IEnumerable<string> ids)
         {
             var service = new ReviewerInfoFullByDocumentIdResult(ids);
             await ConsumeApi(service);
@@ -202,11 +202,11 @@ namespace ScholarOneEF
         }
 
         /// <summary>
-        /// Use getSubmissionInfoBasicBySubmissionId service
+        /// Request manuscript submission tracking and author information by Submission ID
         /// </summary>
         /// <param name="ids">submission ids</param>
         /// <returns>service object</returns>
-        public async Task<SubmissionInfoBasicBySubmissionIdResult> getSubmissionInfoBasicBySubmissionId(IEnumerable<string> ids)
+        public async Task<SubmissionInfoBasicBySubmissionIdResult> GetSubmissionInfoBasicBySubmissionId(IEnumerable<string> ids)
         {
             var service = new SubmissionInfoBasicBySubmissionIdResult(ids);
             await ConsumeApi(service);
@@ -214,11 +214,11 @@ namespace ScholarOneEF
         }
 
         /// <summary>
-        /// Use getSubmissionInfoBasicByDocumentId service
+        /// Request manuscript submission tracking and author information by Document ID
         /// </summary>
         /// <param name="ids">document ids</param>
         /// <returns>service object</returns>
-        public async Task<SubmissionInfoBasicByDocumentIdResult> getSubmissionInfoBasicByDocumentId(IEnumerable<string> ids)
+        public async Task<SubmissionInfoBasicByDocumentIdResult> GetSubmissionInfoBasicByDocumentId(IEnumerable<string> ids)
         {
             var service = new SubmissionInfoBasicByDocumentIdResult(ids);
             await ConsumeApi(service);
@@ -226,11 +226,11 @@ namespace ScholarOneEF
         }
 
         /// <summary>
-        /// Use getSubmissionFullBySubmissionId service
+        /// Request manuscript submission tracking and author information by Submission ID
         /// </summary>
         /// <param name="ids">submission ids</param>
         /// <returns>service object</returns>
-        public async Task<SubmissionFullBySubmissionIdResult> getSubmissionFullBySubmissionId(IEnumerable<string> ids)
+        public async Task<SubmissionFullBySubmissionIdResult> GetSubmissionFullBySubmissionId(IEnumerable<string> ids)
         {
             var service = new SubmissionFullBySubmissionIdResult(ids);
             await ConsumeApi(service);
@@ -238,11 +238,11 @@ namespace ScholarOneEF
         }
 
         /// <summary>
-        /// Use getSubmissionFullByDocumentId service
+        /// Request manuscript submission tracking and author information by Document ID
         /// </summary>
         /// <param name="ids">document ids</param>
         /// <returns>service object</returns>
-        public async Task<SubmissionFullByDocumentIdResult> getSubmissionFullByDocumentId(IEnumerable<string> ids)
+        public async Task<SubmissionFullByDocumentIdResult> GetSubmissionFullByDocumentId(IEnumerable<string> ids)
         {
             var service = new SubmissionFullByDocumentIdResult(ids);
             await ConsumeApi(service);
@@ -250,11 +250,11 @@ namespace ScholarOneEF
         }
 
         /// <summary>
-        /// Use getStaffInfoFullBySubmissionId service
+        /// Request manuscript staff information by Submission ID
         /// </summary>
         /// <param name="ids">submission ids</param>
         /// <returns>service object</returns>
-        public async Task<StaffInfoFullBySubmissionIdResult> getStaffInfoFullBySubmissionId(IEnumerable<string> ids)
+        public async Task<StaffInfoFullBySubmissionIdResult> GetStaffInfoFullBySubmissionId(IEnumerable<string> ids)
         {
             var service = new StaffInfoFullBySubmissionIdResult(ids);
             await ConsumeApi(service);
@@ -262,11 +262,11 @@ namespace ScholarOneEF
         }
 
         /// <summary>
-        /// Use getStaffInfoFullByDocumentId service
+        /// Request manuscript staff information by Document ID
         /// </summary>
         /// <param name="ids">document ids</param>
         /// <returns>service object</returns>
-        public async Task<StaffInfoFullByDocumentIdResult> getStaffInfoFullByDocumentId(IEnumerable<string> ids)
+        public async Task<StaffInfoFullByDocumentIdResult> GetStaffInfoFullByDocumentId(IEnumerable<string> ids)
         {
             var service = new StaffInfoFullByDocumentIdResult(ids);
             await ConsumeApi(service);
@@ -274,11 +274,11 @@ namespace ScholarOneEF
         }
 
         /// <summary>
-        /// Use getSubmissionVersionsBySubmissionId service
+        /// Request manuscript version history information by Submission ID
         /// </summary>
         /// <param name="ids">submission ids</param>
         /// <returns>service object</returns>
-        public async Task<SubmissionVersionsBySubmissionIdResult> getSubmissionVersionsBySubmissionId(IEnumerable<string> ids)
+        public async Task<SubmissionVersionsBySubmissionIdResult> GetSubmissionVersionsBySubmissionId(IEnumerable<string> ids)
         {
             var service = new SubmissionVersionsBySubmissionIdResult(ids);
             await ConsumeApi(service);
@@ -286,11 +286,11 @@ namespace ScholarOneEF
         }
 
         /// <summary>
-        /// Use getSubmissionVersionsByDocumentId service
+        /// Request manuscript version history information by Document ID
         /// </summary>
         /// <param name="ids">document ids</param>
         /// <returns>service object</returns>
-        public async Task<SubmissionVersionsByDocumentIdResult> getSubmissionVersionsByDocumentId(IEnumerable<string> ids)
+        public async Task<SubmissionVersionsByDocumentIdResult> GetSubmissionVersionsByDocumentId(IEnumerable<string> ids)
         {
             var service = new SubmissionVersionsByDocumentIdResult(ids);
             await ConsumeApi(service);
@@ -298,11 +298,11 @@ namespace ScholarOneEF
         }
 
         /// <summary>
-        /// Use getPersonInfoBasicId service
+        /// Request person account meta by Person ID
         /// </summary>
         /// <param name="ids">person ids</param>
         /// <returns>service object</returns>
-        public async Task<PersonInfoBasicByIdResult> getPersonInfoBasicId(IEnumerable<string> ids)
+        public async Task<PersonInfoBasicByIdResult> GetPersonInfoBasicId(IEnumerable<string> ids)
         {
             var service = new PersonInfoBasicByIdResult(ids);
             await ConsumeApi(service);
@@ -310,11 +310,11 @@ namespace ScholarOneEF
         }
 
         /// <summary>
-        /// Use getPersonInfoBasicEmail service
+        /// Request person account meta by Primary Email
         /// </summary>
         /// <param name="email">primary email</param>
         /// <returns>service object</returns>
-        public async Task<PersonInfoBasicByEmailResult> getPersonInfoBasicEmail(string email)
+        public async Task<PersonInfoBasicByEmailResult> GetPersonInfoBasicEmail(string email)
         {
             var service = new PersonInfoBasicByEmailResult(email);
             await ConsumeApi(service);
@@ -322,11 +322,11 @@ namespace ScholarOneEF
         }
 
         /// <summary>
-        /// Use getPersonInfoFullId service
+        /// Request person account meta by Person ID
         /// </summary>
         /// <param name="ids">person ids</param>
         /// <returns>service object</returns>
-        public async Task<PersonInfoFullByIdResult> getPersonInfoFullId(IEnumerable<string> ids)
+        public async Task<PersonInfoFullByIdResult> GetPersonInfoFullId(IEnumerable<string> ids)
         {
             var service = new PersonInfoFullByIdResult(ids);
             await ConsumeApi(service);
@@ -334,11 +334,11 @@ namespace ScholarOneEF
         }
 
         /// <summary>
-        /// Use getPersonInfoFullEmail service
+        /// Request person account meta by Primary Email
         /// </summary>
         /// <param name="email">primary email</param>
         /// <returns>service object</returns>
-        public async Task<PersonInfoFullByEmailResult> getPersonInfoFullEmail(string email)
+        public async Task<PersonInfoFullByEmailResult> GetPersonInfoFullEmail(string email)
         {
             var service = new PersonInfoFullByEmailResult(email);
             await ConsumeApi(service);
@@ -346,11 +346,11 @@ namespace ScholarOneEF
         }
 
         /// <summary>
-        /// Use getDecisionCorrespondenceFullSubmissionId service
+        /// Request journal decision letter information and author response by Submission ID
         /// </summary>
         /// <param name="ids">submission ids</param>
         /// <returns>service object</returns>
-        public async Task<DecisionCorrespondenceFullSubmissionIdResult> getDecisionCorrespondenceFullSubmissionId(IEnumerable<string> ids)
+        public async Task<DecisionCorrespondenceFullSubmissionIdResult> GetDecisionCorrespondenceFullSubmissionId(IEnumerable<string> ids)
         {
             var service = new DecisionCorrespondenceFullSubmissionIdResult(ids);
             await ConsumeApi(service);
@@ -358,11 +358,11 @@ namespace ScholarOneEF
         }
 
         /// <summary>
-        /// Use getDecisionCorrespondenceFullDocumentId service
+        /// Request journal decision letter information and author response by Document ID
         /// </summary>
         /// <param name="ids">document ids</param>
         /// <returns>service object</returns>
-        public async Task<DecisionCorrespondenceFullDocumentIdResult> getDecisionCorrespondenceFullDocumentId(IEnumerable<string> ids)
+        public async Task<DecisionCorrespondenceFullDocumentIdResult> GetDecisionCorrespondenceFullDocumentId(IEnumerable<string> ids)
         {
             var service = new DecisionCorrespondenceFullDocumentIdResult(ids);
             await ConsumeApi(service);
@@ -370,13 +370,13 @@ namespace ScholarOneEF
         }
 
         /// <summary>
-        /// Use getExternalDocumentIdsFull service
+        /// Request external submission information by date range and integration key
         /// </summary>
         /// <param name="from">Beginning date of the time period being requested</param>
         /// <param name="to">Ending date of the time period being requested</param>
         /// <param name="integrationKey">The submission integration key uniquely identifying integration. This is the value contained in the &lt;clientkey&gt; element in the header of the .go file</param> 
         /// <returns>service object</returns>
-        public async Task<ExternalDocumentIdsResult> getExternalDocumentIdsFull(DateTime from, DateTime to, string integrationKey)
+        public async Task<ExternalDocumentIdsResult> GetExternalDocumentIdsFull(DateTime from, DateTime to, string integrationKey)
         {
             var service = new ExternalDocumentIdsResult(from, to, integrationKey);
             await ConsumeApi(service);

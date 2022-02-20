@@ -148,7 +148,7 @@ namespace ScholarOneEF.Models
     /// </summary>
     public class ExternalDocumentIdsResult : BaseServiceResult
     {
-        private string _queryString;
+        private readonly string _queryString;
 
         internal override string GetQueryParameters() => _queryString;
 
