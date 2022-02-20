@@ -298,6 +298,30 @@ namespace ScholarOneEF
         }
 
         /// <summary>
+        /// Use getDecisionCorrespondenceFullSubmissionId service
+        /// </summary>
+        /// <param name="ids">submission ids</param>
+        /// <returns>service object</returns>
+        public async Task<DecisionCorrespondenceFullSubmissionIdResult> getDecisionCorrespondenceFullSubmissionId(IEnumerable<string> ids)
+        {
+            var service = new DecisionCorrespondenceFullSubmissionIdResult(ids);
+            await ConsumeApi(service);
+            return service;
+        }
+
+        /// <summary>
+        /// Use getDecisionCorrespondenceFullDocumentId service
+        /// </summary>
+        /// <param name="ids">document ids</param>
+        /// <returns>service object</returns>
+        public async Task<DecisionCorrespondenceFullDocumentIdResult> getDecisionCorrespondenceFullDocumentId(IEnumerable<string> ids)
+        {
+            var service = new DecisionCorrespondenceFullDocumentIdResult(ids);
+            await ConsumeApi(service);
+            return service;
+        }
+
+        /// <summary>
         /// Use getExternalDocumentIdsFull service
         /// </summary>
         /// <param name="from">Beginning date of the time period being requested</param>
