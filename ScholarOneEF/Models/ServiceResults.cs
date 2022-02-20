@@ -102,6 +102,34 @@ namespace ScholarOneEF.Models
         internal SubmissionVersionsBySubmissionIdResult(IEnumerable<string> ids) : base(ids, ServiceEndpoints.SubmissionVersionsSubmissionId) { }
     }
     /// <summary>
+    /// Results of consuming ScholarOne API service PersonInfoBasicById
+    /// </summary>
+    public class PersonInfoBasicByIdResult : BaseIdsServiceResult
+    {
+        internal PersonInfoBasicByIdResult(IEnumerable<string> ids) : base(ids, ServiceEndpoints.PersonInfoBasicById) { }
+    }
+    /// <summary>
+    /// Results of consuming ScholarOne API service PersonInfoBasicByEmail
+    /// </summary>
+    public class PersonInfoBasicByEmailResult : BaseEmailServiceResult
+    {
+        internal PersonInfoBasicByEmailResult(string email) : base(email, ServiceEndpoints.PersonInfoBasicByEmail) { }
+    }
+    /// <summary>
+    /// Results of consuming ScholarOne API service PersonInfoFullById
+    /// </summary>
+    public class PersonInfoFullByIdResult : BaseIdsServiceResult
+    {
+        internal PersonInfoFullByIdResult(IEnumerable<string> ids) : base(ids, ServiceEndpoints.PersonInfoFullById) { }
+    }
+    /// <summary>
+    /// Results of consuming ScholarOne API service PersonInfoFullByEmail
+    /// </summary>
+    public class PersonInfoFullByEmailResult : BaseEmailServiceResult
+    {
+        internal PersonInfoFullByEmailResult(string email) : base(email, ServiceEndpoints.PersonInfoFullByEmail) { }
+    }
+    /// <summary>
     /// Results of consuming ScholarOne API service DecisionCorrespondenceFullDocumentId
     /// </summary>
     public class DecisionCorrespondenceFullDocumentIdResult : BaseIdsServiceResult

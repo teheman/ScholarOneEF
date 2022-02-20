@@ -20,9 +20,9 @@
         public const string StaffInfoFullBySubmissionId = "/api/s1m/v1/submissions/full/staff_users/submissionids";
         public const string SubmissionVersionsDocumentId = "/api/s1m/v1/submissions/full/revisions/documentids";
         public const string SubmissionVersionsSubmissionId = "/api/s1m/v1/submissions/full/revisions/submissionids";
-        public const string PersonInfoBasicByPersonId = "/api/s1m/v1/person/basic/personid/search";
+        public const string PersonInfoBasicById = "/api/s1m/v1/person/basic/personid/search";
         public const string PersonInfoBasicByEmail = "/api/s1m/v1/person/basic/email/search";
-        public const string PersonInfoFullByPersonId = "/api/s1m/v3/person/full/personid/search";
+        public const string PersonInfoFullById = "/api/s1m/v3/person/full/personid/search";
         public const string PersonInfoFullByEmail = "/api/s1m/v3/person/full/email/search";
         public const string DecisionCorrespondenceFullDocumentId = "/api/s1m/v2/submissions/full/decisioncorrespondence/documentids";
         public const string DecisionCorrespondenceFullSubmissionId = "/api/s1m/v2/submissions/full/decisioncorrespondence/submissionids";

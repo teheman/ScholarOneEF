@@ -298,6 +298,54 @@ namespace ScholarOneEF
         }
 
         /// <summary>
+        /// Use getPersonInfoBasicId service
+        /// </summary>
+        /// <param name="ids">person ids</param>
+        /// <returns>service object</returns>
+        public async Task<PersonInfoBasicByIdResult> getPersonInfoBasicId(IEnumerable<string> ids)
+        {
+            var service = new PersonInfoBasicByIdResult(ids);
+            await ConsumeApi(service);
+            return service;
+        }
+
+        /// <summary>
+        /// Use getPersonInfoBasicEmail service
+        /// </summary>
+        /// <param name="email">primary email</param>
+        /// <returns>service object</returns>
+        public async Task<PersonInfoBasicByEmailResult> getPersonInfoBasicEmail(string email)
+        {
+            var service = new PersonInfoBasicByEmailResult(email);
+            await ConsumeApi(service);
+            return service;
+        }
+
+        /// <summary>
+        /// Use getPersonInfoFullId service
+        /// </summary>
+        /// <param name="ids">person ids</param>
+        /// <returns>service object</returns>
+        public async Task<PersonInfoFullByIdResult> getPersonInfoFullId(IEnumerable<string> ids)
+        {
+            var service = new PersonInfoFullByIdResult(ids);
+            await ConsumeApi(service);
+            return service;
+        }
+
+        /// <summary>
+        /// Use getPersonInfoFullEmail service
+        /// </summary>
+        /// <param name="email">primary email</param>
+        /// <returns>service object</returns>
+        public async Task<PersonInfoFullByEmailResult> getPersonInfoFullEmail(string email)
+        {
+            var service = new PersonInfoFullByEmailResult(email);
+            await ConsumeApi(service);
+            return service;
+        }
+
+        /// <summary>
         /// Use getDecisionCorrespondenceFullSubmissionId service
         /// </summary>
         /// <param name="ids">submission ids</param>
