@@ -1,4 +1,4 @@
-﻿namespace ScholarOneEF.Models
+﻿namespace ScholarOne.Models
 {
     public static class ServiceEndpoints
     {

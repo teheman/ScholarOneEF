@@ -1,4 +1,4 @@
-﻿namespace ScholarOneEF
+﻿namespace ScholarOne
 {
     /// <summary>
     /// The ScholarOne environments for services

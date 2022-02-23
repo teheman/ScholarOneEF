@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace ScholarOneEF.Models
+namespace ScholarOne.Models
 {
     /// <summary>
     /// Service that takes document or submission ids as its parameter

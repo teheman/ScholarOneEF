@@ -1,4 +1,4 @@
-﻿using ScholarOneEF.Models;
+﻿using ScholarOne.Models;
 using System;
 using System.Collections.Generic;
 using System.Net;
@@ -7,7 +7,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace ScholarOneEF
+namespace ScholarOne
 {
     public abstract class BaseFactory
     {

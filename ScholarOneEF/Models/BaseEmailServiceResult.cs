@@ -1,4 +1,4 @@
-﻿namespace ScholarOneEF.Models
+﻿namespace ScholarOne.Models
 {
     /// <summary>
     /// Service that takes primary email as its parameter
