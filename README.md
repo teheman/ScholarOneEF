@@ -44,7 +44,7 @@ The configurable factory settings are either a simple data type or an enum.
 | Environment | Determines if the factory will make requests from the integration or production environments provided by ScholarOne. | EnvironmentEnum | Integration | 
 | ExternalId | Custom id that can be set for audit purposes *(optional)* | User supplied string | null | 
 | LocaleId | Identifier for the language which (must match the caller’s profile) | LocaleIdEnum | English | 
-| PropogateErrors | This property determines if errors consuming the API will be thrown to the application layer. Caught errors will be set to the Error property of the returned service result object, and the Success property will be set to false. | Boolean | true | 
+| PropogateErrors | This property determines if errors consuming the API will be thrown to the application layer. By default, errors will not be caught (PropogateErrors is true). Set PropogateErrors to false to enable the factory to catch errors. Caught errors will be set to the Error property of the returned service result object, and the Success property will be set to false. | Boolean | true | 
 | ResponseType | The format for data returned by ScholarOne | ResponseTypeEnum | XML | 
 
 ### Retrieve Data
@@ -54,3 +54,25 @@ Each ScholarOne API resource has its own method call in the factory. Use the fac
 var submissionIds = new List<string> { "submission id 1", "submission id 2" };
 var result = await factory.GetAuthorFullBySubmissionId(submissionIds);
 ```
+List of factory methods
+  - GetAuthorFullBySubmissionId
+  - GetAuthorFullByDocumentId
+  - GetAuthorBasicBySubmissionId
+  - GetAuthorBasicByDocumentId
+  - GetReviewerInfoFullBySubmissionId
+  - GetReviewerInfoFullByDocumentId
+  - GetSubmissionInfoBasicBySubmissionId
+  - GetSubmissionInfoBasicByDocumentId
+  - GetSubmissionFullBySubmissionId
+  - GetSubmissionFullByDocumentId
+  - GetStaffInfoFullBySubmissionId
+  - GetStaffInfoFullByDocumentId
+  - GetSubmissionVersionsBySubmissionId
+  - GetSubmissionVersionsByDocumentId
+  - GetPersonInfoBasicId
+  - GetPersonInfoBasicEmail
+  - GetPersonInfoFullId
+  - GetPersonInfoFullEmail
+  - GetDecisionCorrespondenceFullSubmissionId
+  - GetDecisionCorrespondenceFullDocumentId
+  - GetExternalDocumentIdsFull
