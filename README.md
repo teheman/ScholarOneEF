@@ -76,3 +76,26 @@ List of factory methods
   - GetDecisionCorrespondenceFullSubmissionId
   - GetDecisionCorrespondenceFullDocumentId
   - GetExternalDocumentIdsFull
+
+### Processing the result
+The factory methods return an object referred to as a "service result" in this library. Each method returns its own service result object, but they all have common properties found in the table below.
+| Property | Description | Data Type | 
+| ---      | ---       | ---       
+| Duration | The amount of time it took to execute the factory method | TimeSpan |
+| Environment | The ScholarOne environment where the API request was made | EnvironmentEnum |
+| Error | The ASP.NET exception encountered while trying to complete the request, if any; This will only be populated if the factory PropogateErrors is set to false and an exception is encountered | Exception |
+| Success | Indicates if the factory method executed without exceptions; This can only be false if the factory PropogateErrors is set to false | Boolean |
+| Uri | The Uri that the factory used to make the service request | Uri |
+| Response | The raw data returned by ScholarOne | string |
+| ReturnType | The format of data that was requested from ScholarOne (XML or json) | ResponseTypeEnum |
+
+Processing the data depends on the format of the data requested. For example, an XML response can be manipulated with the [XmlDocument](https://docs.microsoft.com/en-us/dotnet/api/system.xml.xmldocument?view=net-6.0) class.
+```C#
+// Load the Scholar One XML
+var xmlDoc = new System.Xml.XmlDocument();
+xmlDoc.LoadXml(result.Response);
+
+// Do something with the XML
+```
+
+The Response property can be an empty string, and must be handled by the application code.
