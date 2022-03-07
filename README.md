@@ -77,7 +77,7 @@ List of factory methods
   - GetDecisionCorrespondenceFullDocumentId
   - GetExternalDocumentIdsFull
 
-### Processing the result
+### Process the result
 The factory methods return an object referred to as a "service result" in this library. Each method returns its own service result object, but they all have common properties found in the table below.
 | Property | Description | Data Type | 
 | ---      | ---       | ---       
@@ -99,3 +99,39 @@ xmlDoc.LoadXml(result.Response);
 ```
 
 The Response property can be an empty string, and must be handled by the application code.
+
+## Customizing the Factory
+The factory provided is optional. Developers are free to implement their own factory class by overriding the BaseFactory class. There are two methods that must be implemented by the child class, as described in the table below.
+
+| Method | Description | 
+| ---      | ---     
+| GetInitialAuthorizationHeader | This method performs the initial http request to ScholarOne. The request will receive an Unauthorized (401) response which includes an Authorization header. This method must return the Authorization header so that the BaseFactory can extract the digest authentication values from it. |
+| GetAuthorizedResponse | This method performs the second request to ScholarOne with the corrected Authorization header. ScholarOne will return the requested data in the response body, which the method must return to the BaseFactory. |
+
+A basic implementation of the factory class can be started from the code below.
+```C#
+public class CustomFactory : ScholarOne.BaseFactory
+{
+    public CustomFactory(string user, string password, string siteName) : base(user, password, siteName)
+    {
+        // Set factory settings
+    }
+
+    protected override Task<string> GetInitialAuthorizationHeader(Uri uri)
+    {
+        // Implement custom GET request to the URI specified
+        // return the authorization header of the ScholarOne response
+
+        throw new NotImplementedException();
+    }
+
+    protected override Task<string> GetAuthorizedResponse(Uri uri, string authorizationHeader)
+    {
+        // Implement custom GET request to the URI specified
+        // The authorization header of the request must be set to the authorizationHeader parameter
+        // return the response body from ScholarOne
+            
+        throw new NotImplementedException();
+    }
+}
+```
