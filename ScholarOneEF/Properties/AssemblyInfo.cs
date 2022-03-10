@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("ScholarOne")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Library to consume ScholarOne API")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("ScholarOne")]
