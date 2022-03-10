@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace ScholarOne
 {
+    /// <summary>
+    /// Implements digest authentication functionality and provides methods for each API service
+    /// </summary>
     public abstract class BaseFactory
     {
         #region Fields
@@ -116,6 +119,12 @@ namespace ScholarOne
 
         #region Constructor
 
+        /// <summary>
+        /// Constructor with minimum factory requirements
+        /// </summary>
+        /// <param name="user">user name</param>
+        /// <param name="password">api key</param>
+        /// <param name="siteName">ScholarOne site name for the account</param>
         protected BaseFactory(string user, string password, string siteName)
         {
             _user = user;

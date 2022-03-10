@@ -16,6 +16,12 @@ namespace ScholarOne
 
         #region Implement Factory
 
+        /// <summary>
+        /// Performs second request of digest API method with full authorization header and returns the response content
+        /// </summary>
+        /// <param name="uri">Uri of a digest API</param>
+        /// <param name="authorizationHeader">Authorization header to be used by the request</param>
+        /// <returns>content as a string</returns>
         protected override async Task<string> GetAuthorizedResponse(Uri uri, string authorizationHeader)
         {
             if (_client != null)
@@ -26,7 +32,12 @@ namespace ScholarOne
                 var result = await _client.SendAsync(request);
 
                 var bytes = await result.Content.ReadAsByteArrayAsync();
-                return Encoding.UTF8.GetString(bytes, 0, bytes.Length);
+                string response =  Encoding.UTF8.GetString(bytes, 0, bytes.Length);
+
+                if (result.IsSuccessStatusCode)
+                    return response;
+
+                throw new WebException($"The request could not be completed. The server returned Status: {(int)result.StatusCode}; Message: {(string.IsNullOrWhiteSpace(response) ? "(empty)" : response)}");
             }
             else
             {
@@ -42,6 +53,11 @@ namespace ScholarOne
             }
         }
 
+        /// <summary>
+        /// Performs initial request that will be challenged for credentials
+        /// </summary>
+        /// <param name="uri">Uri of a digest API</param>
+        /// <returns>authorization header of the response as a string</returns>
         protected override async Task<string> GetInitialAuthorizationHeader(Uri uri)
         {
             if (_client != null)
