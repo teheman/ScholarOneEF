@@ -8,7 +8,17 @@ This library was developed in Microsoft Visual Studio and contains one class lib
 
 This repository is not affiliated with or supported by Clarivate or ScholarOne. Using this library requires a user name and API key which must be obtained through ScholarOne support. No guarantees are provided that this repository will be kept up to date with any future changes in the ScholarOne API. 
 
-This project is under active development. 
+## License
+
+This software is provided under the MIT open source license.
+
+Copyright 2022 Thomas Eheman
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## Digest Authentication  
 ScholarOne API services use [digest authentication](https://httpwg.org/specs/rfc7616.html). ASP.NET is capable of consuming services using digest authentication by [providing credentials](https://docs.microsoft.com/en-us/dotnet/api/system.net.networkcredential?view=net-6.0). However, there is an [obscure bug](https://stackoverflow.com/questions/3109507/httpwebrequests-sends-parameterless-uri-in-authorization-header) when attempting to consume services using digest authentication with query parameters in the Uri. Digest standards require that the Uri in the authorization header match the Uri being requested, but ASP.NET leaves out the query parameters in the authorization header. This requires a work around in ASP.NET in order to consume ScholarOne API, and was the main impetus of this library.  
