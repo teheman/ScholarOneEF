@@ -23,14 +23,14 @@ The included factory has several constructors. The minimum requirements are a us
 
 ```C#
 // Initialize factory with minimum requirements  
-var factory = new ScholarOne.Factory("user name", "api key", "site name");  
+var factory = new ScholarOneApi.Factory("user name", "api key", "site name");  
 
 // configure the factory  
 
 // factory defaults  
-factory.ResponseType = ScholarOne.ResponseTypeEnum.xml; 
-factory.LocaleId = ScholarOne.LocaleIdEnum.English;  
-factory.Environment = ScholarOne.EnvironmentEnum.Integration;  
+factory.ResponseType = ScholarOneApi.ResponseTypeEnum.xml; 
+factory.LocaleId = ScholarOneApi.LocaleIdEnum.English;  
+factory.Environment = ScholarOneApi.EnvironmentEnum.Integration;  
 factory.PropogateErrors = true;  
 
 // other settings  
@@ -110,7 +110,7 @@ The factory provided is optional. Developers are free to implement their own fac
 
 A basic implementation of the factory class can be started from the code below.
 ```C#
-public class CustomFactory : ScholarOne.BaseFactory
+public class CustomFactory : ScholarOneApi.BaseFactory
 {
     public CustomFactory(string user, string password, string siteName) : base(user, password, siteName)
     {
