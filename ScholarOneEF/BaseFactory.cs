@@ -1,4 +1,4 @@
-﻿using ScholarOne.Models;
+﻿using ScholarOneApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Net;
@@ -7,7 +7,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace ScholarOne
+namespace ScholarOneApi
 {
     /// <summary>
     /// Implements digest authentication functionality and provides methods for each API service

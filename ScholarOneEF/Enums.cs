@@ -1,4 +1,4 @@
-﻿namespace ScholarOne
+﻿namespace ScholarOneApi
 {
     /// <summary>
     /// The ScholarOne environments for services

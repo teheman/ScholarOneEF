@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ScholarOne.Models
+namespace ScholarOneApi.Models
 {
     /// <summary>
     /// Results of consuming ScholarOne API service AuthorBasicByDocumentId

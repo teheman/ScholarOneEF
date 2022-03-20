@@ -5,7 +5,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ScholarOne
+namespace ScholarOneApi
 {
     /// <summary>
     /// Factory to retrieve service responses from ScholarOne API

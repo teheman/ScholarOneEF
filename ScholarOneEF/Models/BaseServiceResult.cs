@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ScholarOne.Models
+namespace ScholarOneApi.Models
 {
     /// <summary>
     /// Base class for ScholarOne API service
